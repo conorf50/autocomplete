@@ -17,7 +17,7 @@ public class BruteAutoComplete implements AutoComplete {
 	private void loadFromFile() throws FileNotFoundException {
 		File usersFile = new File("./wiki.txt");
 		  Scanner inUsers = new Scanner(usersFile);
-		  String delims = "\t";//each field in the file is separated(delimited) by a space.
+		  String delims = "\t";//each field in the file is separated(delimited) by a tab except for the first one 
 		  while (inUsers.hasNextLine()) {
 		    // get user and rating from data source
 		    String userDetails = inUsers.nextLine();
