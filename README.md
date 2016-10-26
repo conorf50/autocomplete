@@ -8,4 +8,4 @@ It has been designed to be easy to use, implementing the Cliche shell to do the 
 
 ##How to use
 
-
+Simply open the programme Eclipse or as a standalone application (planned feature) The user will then see a CLI with the following options
