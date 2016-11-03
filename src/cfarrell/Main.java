@@ -39,7 +39,7 @@ public class Main {
 	  }*/
 	 
 	 @Command(description="Enter a prefix")
-	  public void bestMatch (@Param(name="prefix") String prefix)
+	  public void enterPrefix (@Param(name="prefix") String prefix)
 	  {
 		String pre = sc.next();
 		int k = 0;
@@ -48,15 +48,16 @@ public class Main {
 	  }
 	 
 	 @Command(description="Load in a file to process")
-	  public void displayWords (@Param(name="topWords") String fileName)
+	  public void URLName (@Param(name="URLName") String fileName)
 	  {
 	    System.out.println("Work In Progress");
 	  }
 	 
-	 @Command(description="Start the programme with a pre-sorted list")
-	  public void demoMode (@Param(name="topWords") String fileName)
+	 @Command(description="Allow the user to switch between quick and slow complete modes")
+	  public void mode (@Param(name="mode") String modeName)
 	  {
-	    System.out.println("Demo mode not implemented yet!");
+		 boolean useQuickComplete = false;
+	    System.out.println("The only mode is BruteAutoComplete!");
 	  }
 	 
 	

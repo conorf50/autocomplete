@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class BruteAutoComplete implements AutoComplete {
@@ -14,7 +15,7 @@ public class BruteAutoComplete implements AutoComplete {
 		loadFromFile();
 	}
 
-	private void loadFromFile() throws FileNotFoundException {
+	public void loadFromFile() throws FileNotFoundException {
 		System.out.println("loading file");
 		File usersFile = new File("./wiki.txt");  //replace with variable later on
 		Scanner inUsers = new Scanner(usersFile);
@@ -49,8 +50,8 @@ public class BruteAutoComplete implements AutoComplete {
 
 	@Override
 	public String bestMatch(String prefix) throws NullPointerException {
-
-		return null;
+		
+		return matches(prefix, 1).iterator().next();
 	}
 
 	@Override
