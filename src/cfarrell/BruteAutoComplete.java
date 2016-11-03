@@ -16,7 +16,7 @@ public class BruteAutoComplete implements AutoComplete {
 
 	private void loadFromFile() throws FileNotFoundException {
 		System.out.println("loading file");
-		File usersFile = new File("./wiki.txt");
+		File usersFile = new File("./wiki.txt");  //replace with variable later on
 		Scanner inUsers = new Scanner(usersFile);
 		String delims = "\t";// each field in the file is separated(delimited)
 								// by a tab except for the first one
@@ -39,13 +39,11 @@ public class BruteAutoComplete implements AutoComplete {
 
 	@Override
 	public double weightOf(String term) throws NullPointerException {
-		// TODO Auto-generated method stub
 
 		for (Term t : allterms) {
 			if (t.term.startsWith(term))
 				return t.weight;
 		}
-
 		return 0;
 	}
 

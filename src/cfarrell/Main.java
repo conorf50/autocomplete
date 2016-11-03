@@ -2,7 +2,7 @@ package cfarrell;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
+import java.util.Scanner;
 import asg.cliche.Command;
 import asg.cliche.Param;
 import asg.cliche.Shell;
@@ -13,7 +13,8 @@ import asg.cliche.ShellFactory;
 
 public class Main {
 	
-	AutoComplete auto;
+	private Scanner sc = new Scanner(System.in);
+	AutoComplete brute;
 	public static void main(String[] args) throws IOException {
 		
 		Main main = new Main();
@@ -25,25 +26,25 @@ public class Main {
 	public Main()
 	{
 		try {
-			auto = new BruteAutoComplete();
+			brute = new BruteAutoComplete();
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 	}
 	
-	 @Command(description="Load in a file to process")
+	/* @Command(description="Load in a file to process")
 	  public void loadFile (@Param(name="FileName") String fileName)
 	  {
 	    //loadFromFile();
-	  }
+	  }*/
 	 
 	 @Command(description="Enter a prefix")
-	  public void bestMatch (@Param(name="prefix") String fileName)
+	  public void bestMatch (@Param(name="prefix") String prefix)
 	  {
-		String prefix = null;
+		String pre = sc.next();
 		int k = 0;
-	    auto.matches(prefix, k);
+	    brute.matches(pre, k);
 	    System.out.println("Work In Progress");
 	  }
 	 
