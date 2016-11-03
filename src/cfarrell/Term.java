@@ -10,7 +10,7 @@ public class Term implements Comparable<Term>{
 	String term;
 	double weight;
 	public Term(String term, double weight) {
-		this.weight =weight;
+		this.weight = weight;
 		this.term = term;
 		
 	}
