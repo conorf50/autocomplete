@@ -54,8 +54,8 @@ public class BruteAutoComplete implements AutoComplete {
 
 	@Override
 	public String bestMatch(String prefix) throws NullPointerException {
-		
 		return matches(prefix, 1).iterator().next();
+		
 	}
 
 	@Override
@@ -66,7 +66,11 @@ public class BruteAutoComplete implements AutoComplete {
 				filterTerms.add(t.getTerm());
 		}
 		Collections.sort(filterTerms);
-		return filterTerms.subList(0,k);
+		if(filterTerms.size() > k){
+			return filterTerms.subList(0,k);
+		}
+		return filterTerms;
+		
 	}
 
 }

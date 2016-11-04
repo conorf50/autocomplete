@@ -3,10 +3,7 @@ package cfarrell;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
-//import asg.cliche.Command;
-//import asg.cliche.Param;
-//import asg.cliche.Shell;
-//import asg.cliche.ShellFactory;
+
 
 public class Main {
 
@@ -18,11 +15,7 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		Main main = new Main();
 		main.run();
-		// Create a shell with ac@ and the user's name displayed in lower case
-		// Shell shell = ShellFactory.createConsoleShell("ac@" +
-		// System.getProperty("user.name").toLowerCase(), "Welcome to
-		// autocomplete- ?help for instructions", main);
-		// shell.commandLoop();
+		
 	}
 
 	public Main() {
@@ -67,26 +60,24 @@ public class Main {
 		}
 	}
 
-	// @Command(description="Enter a prefix")
 	public void matches() {
 		System.out.println("Enter a prefix");
 		String prefix = sc.next();
 		System.out.println("Number of terms to return");
 		int k = sc.nextInt();
-		System.out.println("Working");
-		brute.matches(prefix, k);
-
-	}
-
-	// @Command(description="Load in a file to process")
-	public void URLName() {
-		String URL =  sc.nextLine();
+		System.out.println("Best match = "+ brute.bestMatch(prefix)); //printf wil not advance to the next line
+		System.out.println("Matching terms for k = "+k+"="+brute.matches(prefix, k));
 		
-		System.out.println("Work In Progress");
+
 	}
 
-	// @Command(description="Allow the user to switch between quick and slow
-	// complete modes")
+	public void URLName(){
+		System.out.println("Enter a valid URL");
+		String URL =  sc.next();
+		((BruteAutoComplete) brute).setURL(URL);
+		System.out.println("Using the URL"+ URL);
+	}
+
 	public void mode() {
 		boolean useQuickComplete = false;
 		/*
@@ -94,6 +85,7 @@ public class Main {
 		 * value of say "1" for a quick search. Then return to the main menu and
 		 * show that this has been selected
 		 */
+		
 		System.out.println("The only mode is BruteAutoComplete!");
 	}
 

@@ -13,7 +13,7 @@ public class QuickAutoComplete implements AutoComplete{
 	public void setURL(String URL){
 		this.URL = URL;
 	}
-
+	
 	
 	//static class termComparator implements Comparator<>
 	
