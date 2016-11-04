@@ -65,8 +65,9 @@ public class Main {
 		String prefix = sc.next();
 		System.out.println("Number of terms to return");
 		int k = sc.nextInt();
-		System.out.println("Best match = "+ brute.bestMatch(prefix)); //printf wil not advance to the next line
-		System.out.println("Matching terms for k = "+k+"="+brute.matches(prefix, k));
+	//	int m  = ((Object) brute.matches(prefix, k)).size();          //trying to show how many results were returned
+		System.out.println("Best match = "+ brute.bestMatch(prefix)); 
+		System.out.println("Matching terms for k = "+ brute.matches(prefix, k));
 		
 
 	}
