@@ -1,7 +1,9 @@
 package cfarrell;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -11,6 +13,8 @@ public class Main {
 	// called by interface name first
 	AutoComplete brute; // brute force autocomplete
 	AutoComplete quick; // quick autocomplete
+	public static String URL = "./wiki.txt";
+	static ArrayList<Term> allterms = new ArrayList<>();
 
 	public static void main(String[] args) throws IOException {
 		Main main = new Main();
@@ -25,6 +29,33 @@ public class Main {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public void setURL(String URL){
+		Main.URL = URL;
+	}
+	
+	public static void loadFromFile() throws FileNotFoundException {
+		System.out.println("loading file from address" + URL);
+		File usersFile = new File(URL);  //replace with variable later on
+		Scanner inUsers = new Scanner(usersFile);
+		String delims = "\t";// each field in the file is separated(delimited)
+								// by a tab except for the first one
+		while (inUsers.hasNextLine()) {
+			// get user and rating from data source
+			String userDetails = inUsers.nextLine();
+			userDetails = userDetails.trim();
+
+			// parse user details string
+			String[] userTokens = userDetails.split(delims);
+
+			// add this data to an Arraylist.
+			if (userTokens.length == 2) {
+				Term t = new Term(userTokens[1], Double.parseDouble(userTokens[0]));
+				allterms.add(t);
+			}
+		}
+		inUsers.close();
 	}
 
 	private int mainMenu() {

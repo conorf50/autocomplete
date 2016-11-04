@@ -7,13 +7,14 @@ import java.io.FileNotFoundException;
 import org.junit.Test;
 
 import cfarrell.BruteAutoComplete;
+import cfarrell.Main;
 
 public class BruteAutoCompleteTest {
 
 	@Test
 	public void testGetWeight() throws FileNotFoundException {
 		BruteAutoComplete brute = new BruteAutoComplete();
-		brute.loadFromFile();
+		Main.loadFromFile();
 		assertEquals(51756400,brute.weightOf("house"),0.1);
 		assertNotEquals(23456,brute.weightOf("feck"), 0.2);
 	}
