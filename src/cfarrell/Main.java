@@ -33,6 +33,7 @@ public class Main {
 	
 	public void setURL(String URL){
 		Main.URL = URL;
+		System.out.println(URL);
 	}
 	
 	public static void loadFromFile() throws FileNotFoundException {
