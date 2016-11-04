@@ -15,7 +15,7 @@ public class BruteAutoCompleteTest {
 		BruteAutoComplete brute = new BruteAutoComplete();
 		brute.loadFromFile();
 		assertEquals(51756400,brute.weightOf("house"),0.1);
-
+		assertNotEquals(23456,brute.weightOf("feck"), 0.2);
 	}
 	
 	public void testGetOtherMethod() {

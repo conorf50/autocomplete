@@ -9,7 +9,7 @@ public class Term implements Comparable<Term>{
 	}
 	String term;
 	double weight;
-	public Term(String term, double weight) {
+	public Term(String term, double weight) throws IllegalArgumentException {
 		this.weight = weight;
 		this.term = term;
 		
@@ -19,7 +19,4 @@ public class Term implements Comparable<Term>{
 		
 		return Double.compare(this.getWeight(), t.getWeight());
 	}
-	
-
-	
 }

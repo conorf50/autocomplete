@@ -15,8 +15,8 @@ public class BruteAutoComplete implements AutoComplete {
 		loadFromFile();
 	}
 	
-	public void setURL(){
-		Main.URL = URL;
+	public void setURL(String URL){
+		this.URL = URL;
 	}
 
 	public void loadFromFile() throws FileNotFoundException {
