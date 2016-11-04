@@ -8,15 +8,20 @@ import java.util.Scanner;
 
 public class BruteAutoComplete implements AutoComplete {
 
+	public String URL = "./wiki.txt";
 	ArrayList<Term> allterms = new ArrayList<>();
 
 	public BruteAutoComplete() throws FileNotFoundException {
 		loadFromFile();
 	}
+	
+	public void setURL(){
+		Main.URL = URL;
+	}
 
 	public void loadFromFile() throws FileNotFoundException {
-		System.out.println("loading file");
-		File usersFile = new File("./wiki.txt");  //replace with variable later on
+		System.out.println("loading file from address" + URL);
+		File usersFile = new File(URL);  //replace with variable later on
 		Scanner inUsers = new Scanner(usersFile);
 		String delims = "\t";// each field in the file is separated(delimited)
 								// by a tab except for the first one
