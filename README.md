@@ -1,5 +1,5 @@
 # Algorithms Assignment 1 2016
-Basic autocomplete java programme with Cliche shell interface http://cliche.sourceforge.net/
+Basic autocomplete java programme with CLI interface
 
 ###Outline
 This programme reads in values from a list of values aand stores them in memory. Then the user can search against these terms for a prefix such
@@ -10,4 +10,8 @@ It has been designed to be easy to use, implementing the Cliche shell to do the 
 ###How to use
 
 Simply open the programme Eclipse or as a standalone application (planned feature) The user will then see a CLI with the following options
-Type ?list to see the available options.
+1: Specify a URL
+2: Enter prefix 
+3: Change autocomplete mode
+
+These options are self-explanatory and very basic, the actual sorting algorithms are the real focus of this project.
