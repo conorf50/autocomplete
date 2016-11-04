@@ -13,7 +13,7 @@ public class Main {
 	// called by interface name first
 	AutoComplete brute; // brute force autocomplete
 	AutoComplete quick; // quick autocomplete
-	public static String URL = "./wiki.txt";
+	public static String URL = null;    //important for testing later on
 	static ArrayList<Term> allterms = new ArrayList<>();
 
 	public static void main(String[] args) throws IOException {

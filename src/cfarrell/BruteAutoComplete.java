@@ -7,8 +7,14 @@ import java.util.Collections;
 public class BruteAutoComplete implements AutoComplete {
 
 	public BruteAutoComplete() throws FileNotFoundException {
-		Main.loadFromFile();
-	}
+		if (Main.URL !=null) {
+			Main.loadFromFile();
+		}
+		else{
+			Main.URL = "./wiki.txt";    //default to the built in file
+		}
+		}
+		
 
 	@Override
 	public double weightOf(String term) throws NullPointerException {
