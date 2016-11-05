@@ -1,7 +1,9 @@
 package cfarrell;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 
 public class QuickAutoComplete implements AutoComplete{
@@ -32,16 +34,32 @@ public class QuickAutoComplete implements AutoComplete{
 
 
 	@Override
-	public Iterable<String> matches(String prefix, int k) {
-		System.out.println("Work In Progress");
-
+	public Iterable<String> matches(String prefix, int k) throws NullPointerException {
 		return null;
-	}
-
-
-	public void loadFromFile() {
-		// TODO Auto-generated method stub
+//		int index;
+//		ArrayList<String> filterTerms = new ArrayList<String>();
+//		Collections.binarySearch(allterms, new Term(index,prefix));
+//		index = -index-1; //attempt at setting the value returned to  a positive value
+//		
+//		List<String> filtered = new ArrayList<String>();
+//		while(allterms.get(index).getWord().startsWith(prefix)) {
+//			if (filterTerms.size() > k) {
+//				return filterTerms.subList(0, k);
+//			}
+//			return filterTerms;
+//
+//		}
+//		
+		
 		
 	}
+
+	
+
+
+//	public void loadFromFile() {
+//		// TODO Auto-generated method stub
+//		
+//	}
 	
 }

@@ -13,7 +13,7 @@ public class Main {
 	// called by interface name first
 	AutoComplete brute; // brute force autocomplete
 	AutoComplete quick; // quick autocomplete
-	public static String URL = null;    //important for testing later on
+	public static String URL = "./wiki.txt";
 	static ArrayList<Term> allterms = new ArrayList<>();
 
 	public static void main(String[] args) throws IOException {
@@ -33,7 +33,6 @@ public class Main {
 	
 	public void setURL(String URL){
 		Main.URL = URL;
-		System.out.println(URL);
 	}
 	
 	public static void loadFromFile() throws FileNotFoundException {
@@ -104,20 +103,22 @@ public class Main {
 
 	}
 
-	public static ArrayList<Term> getAllterms() {
-		return allterms;
-	}
-
-	public static void setAllterms(ArrayList<Term> allterms) {
-		Main.allterms = allterms;
-	}
-
 	public void URLName(){
-		System.out.println("Enter a valid URL");
-		String URL =  sc.next();
-		((BruteAutoComplete) brute).setURL(URL);
-		System.out.println("Using the URL"+ URL);
-	}
+	//	System.out.println("Type 1 to enter URL, 0 to return to main menu");
+//		int option = sc.nextInt();
+//		while(option == 1) {
+		
+				System.out.println("Enter a valid URL");
+				String URL =  sc.next();
+				((BruteAutoComplete) brute).setURL(URL);
+				System.out.println("Using the URL"+ URL);
+		}
+			
+//				mainMenu();
+			
+			
+//	}
+	
 
 	public void mode() {
 		boolean useQuickComplete = false;

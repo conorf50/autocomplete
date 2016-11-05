@@ -6,20 +6,10 @@ import java.util.Collections;
 
 public class BruteAutoComplete implements AutoComplete {
 
-	//public Iterable<String> error;
-	//public String fault = "Problem";
-	
-
 	public BruteAutoComplete() throws FileNotFoundException {
-		if (Main.URL != null) {
-			Main.loadFromFile();
-		} else {
-			Main.URL = "./wiki.txt"; // default to the built in file
-		}
+		Main.loadFromFile();
 	}
 
-	
-		
 	@Override
 	public double weightOf(String term) throws NullPointerException {
 
@@ -32,11 +22,7 @@ public class BruteAutoComplete implements AutoComplete {
 
 	@Override
 	public String bestMatch(String prefix) throws NullPointerException {
-
-//		if (prefix != null) {
-			return matches(prefix, 1).iterator().next();
-		//}
-	//	return fault; // the String error is being used when the prefix is null
+		return matches(prefix, 1).iterator().next();
 
 	}
 
@@ -52,7 +38,6 @@ public class BruteAutoComplete implements AutoComplete {
 			return filterTerms.subList(0, k);
 		}
 		return filterTerms;
-
 
 	}
 

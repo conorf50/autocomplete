@@ -56,6 +56,10 @@ public class MainTest {
 	}
 
 	
-
+//	
+//	@Test
+//	public void testURL(String URLName) {
+//		brute.setURL("./wiki.txt");
+//	}
 
 }
