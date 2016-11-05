@@ -104,6 +104,14 @@ public class Main {
 
 	}
 
+	public static ArrayList<Term> getAllterms() {
+		return allterms;
+	}
+
+	public static void setAllterms(ArrayList<Term> allterms) {
+		Main.allterms = allterms;
+	}
+
 	public void URLName(){
 		System.out.println("Enter a valid URL");
 		String URL =  sc.next();

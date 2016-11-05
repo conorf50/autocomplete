@@ -6,8 +6,8 @@ import java.util.Collections;
 
 public class BruteAutoComplete implements AutoComplete {
 
-	public Iterable<String> error;
-	public String fault = "Problem";
+	//public Iterable<String> error;
+	//public String fault = "Problem";
 	
 
 	public BruteAutoComplete() throws FileNotFoundException {
@@ -18,6 +18,8 @@ public class BruteAutoComplete implements AutoComplete {
 		}
 	}
 
+	
+		
 	@Override
 	public double weightOf(String term) throws NullPointerException {
 
@@ -31,10 +33,10 @@ public class BruteAutoComplete implements AutoComplete {
 	@Override
 	public String bestMatch(String prefix) throws NullPointerException {
 
-		if (prefix != null) {
+//		if (prefix != null) {
 			return matches(prefix, 1).iterator().next();
-		}
-		return fault; // the String error is being used when the prefix is null
+		//}
+	//	return fault; // the String error is being used when the prefix is null
 
 	}
 
@@ -49,7 +51,8 @@ public class BruteAutoComplete implements AutoComplete {
 		if (filterTerms.size() > k) {
 			return filterTerms.subList(0, k);
 		}
-		return error;
+		return filterTerms;
+
 
 	}
 
